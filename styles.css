@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a2c2e0 0%, #d0e5f9 100%);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #007acc;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+#menu button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #007acc;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#menu button:hover {
+    background: #005f8d;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cell {
+    background-color: white;
+    border: 2px solid #007acc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #e6f1ff;
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+#resetButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007acc;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#resetButton:hover {
+    background: #005f8d;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell {
+    animation: pop-in 0.5s ease forwards;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-10px);
+    }
+    40%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+.winner {
+    animation: shake 0.5s ease;
+}
